@@ -1,56 +1,30 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# OOP-School-Library
 
-> Description the project.
+> This app comprises a school library app.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
 ### Setup
 
-### Install
+To get a local copy up and running follow these simple steps.
 
-### Usage
+To setup the project in your local, in the repo page: click on code (dropdown list) > Download as ZIP. or open terminal of path you want to install project and run this command
+git clone git@github.com/oliverSCZ/OOP-school-library.git
 
-### Run tests
+## Author
 
-### Deployment
+👤 **Oliver Coimbra**
 
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@oliverSCZ](https://github.com/oliverSCZ)
+- Twitter: [@olivercoimbra](https://twitter.com/olivercoimbra)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/olivercoimbra)
 
 ## 🤝 Contributing
 
@@ -61,13 +35,3 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
