@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Class Person
+Class person
   attr_reader :id
   attr_reader :age
   attr_writer :age
