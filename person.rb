@@ -1,11 +1,6 @@
-# frozen_string_literal: true
-
-Class person
+class Person
+  attr_accessor :age, :name
   attr_reader :id
-  attr_reader :age
-  attr_writer :age
-  attr_reader :name
-  attr_writer :name
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
@@ -17,7 +12,7 @@ Class person
   def can_use_services?
     if of_age? || @parent_permission
       true
-      else
+    else
       false
     end
   end
