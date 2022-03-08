@@ -15,7 +15,10 @@
 
 To get a local copy up and running follow these simple steps.
 
-To setup the project in your local, in the repo page: click on code (dropdown list) > Download as ZIP. or open terminal of path you want to install project and run this command
+To setup the project in your local, in the repo page: 
+- Click on code (dropdown list) 
+- Download as ZIP. or open terminal of path you want to install project 
+- Run this command
 git clone git@github.com/oliverSCZ/OOP-school-library.git
 
 ## Author
