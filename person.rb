@@ -1,4 +1,6 @@
-class Person
+require './nameable.rb'
+
+class Person < Nameable
   attr_accessor :age, :name
   attr_reader :id
 
@@ -17,9 +19,20 @@ class Person
     end
   end
 
+  def correct_name
+    name
+  end
+
   private
 
   def of_age?
     @age >= 18
   end
 end
+
+person = Person.new(22, 'maximilianus')
+  person.correct_name
+  capitalizedPerson = CapitalizeDecorator.new(person)
+  capitalizedPerson.correct_name
+  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+  capitalizedTrimmedPerson.correct_name
