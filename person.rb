@@ -27,10 +27,10 @@ class Person
   def add_rental(rental)
     @rentals.push(rental)
   end
+
   private
 
   def of_age?
     @age >= 18
   end
 end
-
