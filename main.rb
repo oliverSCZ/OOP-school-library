@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+# ruby main.rb
 
 require './app'
 def main
