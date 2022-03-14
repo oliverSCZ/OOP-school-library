@@ -22,13 +22,17 @@ class App
     option = gets.chomp
     case option
     when '1'
-      list_all_books
+      List.new.list_items('books', @list_books)
+      menu
     when '2'
-      list_all_persons
+      List.new.list_items('people', @list_persons)
+      menu
     when '3'
-      create_person
+      People.new.create_person(@list_persons)
+      menu
     when '4'
-      create_book
+      Book_creator.new.create_book(@list_books)
+      menu
     when '5'
       create_a_rental
     when '6'
@@ -40,53 +44,6 @@ class App
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
-
-  def create_person
-    puts 'Do you want to create a student (1) or a teacher(2)? [Input the number]:'
-    selection = gets.chomp.to_i
-    case selection
-    when 1
-      create_student
-    when 2
-      create_teacher
-    end
-  end
-
-  def create_student
-    print 'Age :'
-    age_stu = gets.chomp
-    print 'Name :'
-    name_stu = gets.chomp
-    classroom = 'Unknow'
-    print 'Has parent permission? [Y/N]:'
-    permission_stu = gets.chomp
-    parent_permission = permission_stu == 'Y'
-    @list_persons << Student.new(age_stu, classroom, name_stu, parent_permission)
-    puts 'Person created successfully'
-    menu
-  end
-
-  def create_teacher
-    print 'Age :'
-    age_t = gets.chomp
-    print 'Name :'
-    name_t = gets.chomp
-    print 'Specialization :'
-    specialization_t = gets.chomp
-    @list_persons << Teacher.new(specialization_t, name_t, age_t)
-    puts 'Person created successfully'
-    menu
-  end
-
-  def create_book
-    print 'Title :'
-    title_book = gets.chomp
-    print 'Author :'
-    author_book = gets.chomp
-    @list_books << Book.new(title_book, author_book)
-    puts 'Book created successfully'
-    menu
-  end
 
   # rubocop:disable Metrics/MethodLength
   def create_a_rental
@@ -159,6 +116,9 @@ class App
     menu
   end
 end
+require_relative 'create_people'
+require_relative 'create_book'
+require_relative 'list'
 require_relative 'rental'
 require_relative 'teacher'
 require_relative 'person'
