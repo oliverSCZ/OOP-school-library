@@ -21,13 +21,19 @@ To setup the project in your local, in the repo page:
 - Run this command
 git clone git@github.com/oliverSCZ/OOP-school-library.git
 
-## Author
+## Authors
 
 👤 **Oliver Coimbra**
 
 - GitHub: [@oliverSCZ](https://github.com/oliverSCZ)
 - Twitter: [@olivercoimbra](https://twitter.com/olivercoimbra)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/olivercoimbra)
+
+👤 **Dante Alvarez**
+
+- GitHub: [@danalvrz](https://github.com/danalvrz)
+- Twitter: [@danalvrz](https://twitter.com/danalvrz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dante-álvarez-p)
 
 ## 🤝 Contributing
 
