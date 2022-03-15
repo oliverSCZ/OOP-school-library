@@ -17,6 +17,7 @@ class App
     selection
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def selection
     option = gets.chomp
     case option
@@ -27,9 +28,9 @@ class App
     when '3'
       People.new.create_person(@list_persons)
     when '4'
-      Book_creator.new.create_book(@list_books)
+      BookCreator.new.create_book(@list_books)
     when '5'
-      Create_rental.new.add_rental(@list_rentals, @list_books, @list_persons)
+      CreateRental.new.add_rental(@list_rentals, @list_books, @list_persons)
     when '6'
       List.new.list_items('rentals', @list_persons)
     when '7'
@@ -39,6 +40,7 @@ class App
     end
     menu
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def run
     menu

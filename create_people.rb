@@ -1,6 +1,6 @@
 class People
-  @age = 0;
-  @name = "unknown"
+  @age = 0
+  @name = 'unknown'
 
   def create_person(array)
     puts 'Do you want to create a student (1) or a teacher(2)? [Input the number]:'
@@ -33,5 +33,4 @@ class People
     puts 'Person created successfully'
     Teacher.new(specialization_t, @name, @age)
   end
-
 end
