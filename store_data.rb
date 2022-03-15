@@ -21,9 +21,9 @@ class StoreData
     saved_people = []
     data.each do |person| 
       if person.class.to_s == 'Student'
-      saved_people << { class: person.class, age: person.age, name: person.name, parent_permission: person.parent_permission }
+      saved_people << { type: person.class, age: person.age, name: person.name, parent_permission: person.parent_permission, id: person.id }
       elsif person.class.to_s == 'Teacher'
-      saved_people << { class: person.class, specialization: person.specialization, age: person.age, name: person.name }
+      saved_people << { type: person.class, specialization: person.specialization, age: person.age, name: person.name }
       end  
     end
     File.write('data/people.json', JSON.generate(saved_people))
@@ -32,10 +32,10 @@ class StoreData
   def self.get_people
     available_people = []
       JSON.parse(File.read('data/people.json')).each do |person|
-        if person.class.to_s == 'Student'
+        if person['type'] == 'Student'
         available_people << Student.new(person['age'], person['parent_permission'], person['name'], id: person['id'])
-        elsif person.class.to_s == 'Teacher'
-        available_people << Teacher.new(person['specialization'], person['age'], person['name'])
+        elsif person['type'] == 'Teacher'
+        available_people << Teacher.new(person['specialization'], person['name'], person['age'])
         end
       end
       available_people
