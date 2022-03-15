@@ -1,7 +1,7 @@
 class App
   def initialize()
-    @list_books = []
-    @list_persons = []
+    @list_books = StoreData.get_books
+    @list_persons = StoreData.get_people
     @list_rentals = []
   end
 
@@ -34,6 +34,8 @@ class App
     when '6'
       List.new.list_items('rentals', @list_persons)
     when '7'
+      StoreData.save_books(@list_books)
+      StoreData.save_people(@list_persons)
       exit
     else
       "We don't have this option : #{option}"
@@ -46,6 +48,7 @@ class App
     menu
   end
 end
+require './store_data'
 require './create_rental'
 require './create_people'
 require './create_book'
