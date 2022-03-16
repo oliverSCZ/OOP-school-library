@@ -41,4 +41,19 @@ class StoreData
       available_people
   end
 
+  def self.save_rentals(data)
+    saved_rentals = []
+    data.each do |rental| saved_rentals << { id: rental.id, book: rental.book.id, person: rental.person.id, date: rental.date }
+      end
+    File.write('data/rentals.json', JSON.generate(saved_rentals))
+  end
+
+  def self.get_rentals(books, people)
+    available_rentals = []
+    JSON.parse(File.read('data/rentals.json')).each do |rental|
+      available_rentals <<  Rental.new(rental['date'], books.find { |book| book.id == rental['book'] }, people.find { |person| person.id == rental['person'] })
+      end
+    available_rentals
+  end
+
 end

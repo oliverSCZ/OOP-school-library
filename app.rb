@@ -2,7 +2,7 @@ class App
   def initialize()
     @list_books = StoreData.get_books
     @list_persons = StoreData.get_people
-    @list_rentals = []
+    @list_rentals = []#StoreData.get_rentals(@list_books, @list_persons)
   end
 
   def menu
@@ -36,6 +36,7 @@ class App
     when '7'
       StoreData.save_books(@list_books)
       StoreData.save_people(@list_persons)
+      StoreData.save_rentals(@list_rentals)
       exit
     else
       "We don't have this option : #{option}"
