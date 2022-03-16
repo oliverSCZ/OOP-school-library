@@ -6,7 +6,6 @@ class App
   end
 
   def menu
-    # StoreData.get_rentals(@list_books, @list_persons)
     puts "\nPlease choose an option by enterin a number :
     1 - List all books
     2 - List all people
