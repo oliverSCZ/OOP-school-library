@@ -1,12 +1,12 @@
 class App
   def initialize()
-    @list_books = StoreData.get_books
-    @list_persons = StoreData.get_people
-    @list_rentals = StoreData.get_rentals(@list_books, @list_persons)
+    @list_books = StoreData.recover_books
+    @list_persons = StoreData.recover_people
+    @list_rentals = StoreData.recover_rentals(@list_books, @list_persons)
   end
 
   def menu
-    #StoreData.get_rentals(@list_books, @list_persons)
+    # StoreData.get_rentals(@list_books, @list_persons)
     puts "\nPlease choose an option by enterin a number :
     1 - List all books
     2 - List all people
@@ -35,16 +35,20 @@ class App
     when '6'
       List.new.list_items('rentals', @list_persons)
     when '7'
-      StoreData.save_books(@list_books)
-      StoreData.save_people(@list_persons)
-      StoreData.save_rentals(@list_rentals)
-      exit
+      exit_app
     else
       "We don't have this option : #{option}"
     end
     menu
   end
   # rubocop:enable Metrics/CyclomaticComplexity
+
+  def exit_app
+    StoreData.save_books(@list_books)
+    StoreData.save_people(@list_persons)
+    StoreData.save_rentals(@list_rentals)
+    exit
+  end
 
   def run
     menu
