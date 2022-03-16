@@ -2,7 +2,7 @@
 
 # OOP-School-Library
 
-> This app comprises a school library app.
+> This app comprises a school library app, enjoy!
 
 
 ## Built With

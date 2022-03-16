@@ -1,8 +1,8 @@
 class App
   def initialize()
-    @list_books = []
-    @list_persons = []
-    @list_rentals = []
+    @list_books = StoreData.recover_books
+    @list_persons = StoreData.recover_people
+    @list_rentals = StoreData.recover_rentals(@list_books, @list_persons)
   end
 
   def menu
@@ -34,7 +34,7 @@ class App
     when '6'
       List.new.list_items('rentals', @list_persons)
     when '7'
-      exit
+      exit_app
     else
       "We don't have this option : #{option}"
     end
@@ -42,10 +42,18 @@ class App
   end
   # rubocop:enable Metrics/CyclomaticComplexity
 
+  def exit_app
+    StoreData.save_books(@list_books)
+    StoreData.save_people(@list_persons)
+    StoreData.save_rentals(@list_rentals)
+    exit
+  end
+
   def run
     menu
   end
 end
+require './store_data'
 require './create_rental'
 require './create_people'
 require './create_book'
