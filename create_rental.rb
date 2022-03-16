@@ -33,8 +33,7 @@ class CreateRental
 
   def create_rent
     select_objects
-    newRental = Rental.new(@date, @book_list[@select_book_rent], @people_list[@select_person_rent])
-    p newRental
+    Rental.new(@date, @book_list[@select_book_rent], @people_list[@select_person_rent])
   end
 
   def check_lists
