@@ -23,7 +23,9 @@ class People
     permission_stu = gets.chomp
     parent_permission = permission_stu == 'Y'
     puts 'Person created successfully'
-    Student.new(@age, classroom, @name, parent_permission)
+    newStudent = Student.new(@age, classroom, @name, parent_permission)
+    p newStudent
+    newStudent
   end
 
   def create_teacher
@@ -31,6 +33,8 @@ class People
     print 'Specialization :'
     specialization_t = gets.chomp
     puts 'Person created successfully'
-    Teacher.new(specialization_t, @name, @age)
+    newTeacher = Teacher.new(specialization_t, @name, @age)
+    p newTeacher
+    newTeacher
   end
 end

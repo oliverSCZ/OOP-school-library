@@ -2,10 +2,11 @@ class App
   def initialize()
     @list_books = StoreData.get_books
     @list_persons = StoreData.get_people
-    @list_rentals = []#StoreData.get_rentals(@list_books, @list_persons)
+    @list_rentals = StoreData.get_rentals(@list_books, @list_persons)
   end
 
   def menu
+    #StoreData.get_rentals(@list_books, @list_persons)
     puts "\nPlease choose an option by enterin a number :
     1 - List all books
     2 - List all people

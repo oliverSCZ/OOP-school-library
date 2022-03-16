@@ -23,7 +23,7 @@ class StoreData
       if person.class.to_s == 'Student'
       saved_people << { type: person.class, age: person.age, name: person.name, parent_permission: person.parent_permission, id: person.id }
       elsif person.class.to_s == 'Teacher'
-      saved_people << { type: person.class, specialization: person.specialization, age: person.age, name: person.name }
+      saved_people << { type: person.class, specialization: person.specialization, age: person.age, name: person.name, id: person.id }
       end  
     end
     File.write('data/people.json', JSON.generate(saved_people))
@@ -33,9 +33,9 @@ class StoreData
     available_people = []
       JSON.parse(File.read('data/people.json')).each do |person|
         if person['type'] == 'Student'
-        available_people << Student.new(person['age'], person['parent_permission'], person['name'], id: person['id'])
+        available_people << Student.new(person['age'], person['name'], person['parent_permission'], id: person['id'])
         elsif person['type'] == 'Teacher'
-        available_people << Teacher.new(person['specialization'], person['name'], person['age'])
+        available_people << Teacher.new(person['specialization'], person['name'], person['age'], id: person['id'])
         end
       end
       available_people
@@ -51,7 +51,7 @@ class StoreData
   def self.get_rentals(books, people)
     available_rentals = []
     JSON.parse(File.read('data/rentals.json')).each do |rental|
-      available_rentals <<  Rental.new(rental['date'], books.find { |book| book.id == rental['book'] }, people.find { |person| person.id == rental['person'] })
+      available_rentals <<  Rental.new(rental['date'], books.find { |book| book.id == rental['book'] }, people.find { |person| person.id == rental['person'] }, id: rental['id'])
       end
     available_rentals
   end
